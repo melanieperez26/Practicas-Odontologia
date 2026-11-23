@@ -47,8 +47,11 @@
     <!-- Footer del sidebar con información adicional -->
     <div class="sidebar-footer" v-if="!isCollapsed">
       <div class="footer-info">
-        <i class="fas fa-university"></i>
-        <span>ULEAM v2.0</span>
+        <span class="footer-mark">U</span>
+        <div>
+          <strong>Odontología</strong>
+          <span>ULEAM</span>
+        </div>
       </div>
     </div>
   </aside>
@@ -87,7 +90,7 @@ const visibleSections = computed(() => {
 .app-sidebar {
   position: fixed;
   left: 0;
-  top: 56px; /* Altura del header */
+  top: 64px;
   bottom: 0;
   width: 240px;
   background: var(--color-surface);
@@ -156,8 +159,8 @@ const visibleSections = computed(() => {
 }
 
 .nav-section {
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.5rem;
+  padding: 0.75rem 0.75rem 0.35rem;
+  margin-bottom: 0.25rem;
 }
 
 .nav-section-title {
@@ -182,9 +185,9 @@ const visibleSections = computed(() => {
 .nav-item {
   display: flex;
   align-items: center;
-  gap: 0.875rem;
-  padding: 0.75rem 1rem;
-  border-radius: var(--border-radius);
+  gap: 0.75rem;
+  padding: 0.72rem 0.75rem;
+  border-radius: 0.75rem;
   color: var(--color-text-secondary);
   text-decoration: none;
   font-weight: 500;
@@ -198,8 +201,9 @@ const visibleSections = computed(() => {
 }
 
 .nav-item.active {
-  background: var(--color-primary);
-  color: white;
+  background: rgba(31, 90, 59, 0.1);
+  color: var(--color-primary);
+  box-shadow: inset 3px 0 0 var(--color-primary);
 }
 
 .nav-item i {
@@ -233,20 +237,46 @@ const visibleSections = computed(() => {
 
 /* ========== FOOTER DEL SIDEBAR ========== */
 .sidebar-footer {
-  padding: 1rem;
+  margin: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
   border-top: 1px solid var(--color-border-light);
+  background: var(--color-background-secondary);
 }
 
 .footer-info {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
+  gap: 0.625rem;
+  color: var(--color-text-secondary);
 }
 
-.footer-info i {
-  color: var(--color-primary);
+.footer-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--gradient-primary);
+  color: white;
+  font-weight: 800;
+}
+
+.footer-info div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.footer-info strong {
+  color: var(--color-text-primary);
+  font-size: 0.78rem;
+}
+
+.footer-info div span {
+  margin-top: 0.2rem;
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
 }
 
 /* ========== OVERLAY PARA MÓVILES ========== */

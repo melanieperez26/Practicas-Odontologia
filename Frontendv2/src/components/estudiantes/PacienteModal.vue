@@ -4,15 +4,25 @@
       <div v-if="isOpen" class="modal-overlay" @click="handleClose">
         <div class="modal-container paciente-modal" @click.stop>
           <div class="modal-header">
-            <h2>{{ isEditing ? 'Editar paciente' : 'Crear nuevo paciente' }}</h2>
-            <button class="btn-close" @click="handleClose" aria-label="Cerrar">×</button>
+            <div class="modal-heading">
+              <span class="modal-heading-icon" aria-hidden="true">
+                <i :class="isEditing ? 'fas fa-user-pen' : 'fas fa-user-plus'"></i>
+              </span>
+              <div>
+                <span class="modal-eyebrow">Registro clínico</span>
+                <h2>{{ isEditing ? 'Editar paciente' : 'Nuevo paciente' }}</h2>
+              </div>
+            </div>
+            <button class="btn-close" @click="handleClose" aria-label="Cerrar">
+              <i class="fas fa-times"></i>
+            </button>
           </div>
 
           <div class="modal-body">
             <form @submit.prevent="handleSubmit" class="form-container">
               <!-- Sección 1: Datos personales -->
               <div class="form-section">
-                <h3>👤 Datos personales</h3>
+                <h3><i class="fas fa-user"></i> Datos personales</h3>
                 
                 <div class="form-row">
                   <div class="form-group">
@@ -147,7 +157,7 @@
 
               <!-- Sección 2: Documento -->
               <div class="form-section">
-                <h3>🆔 Información de documento</h3>
+                <h3><i class="fas fa-id-card"></i> Información de documento</h3>
 
                 <div class="form-row">
                   <div class="form-group">
@@ -178,7 +188,7 @@
 
               <!-- Sección 3: Parroquia -->
               <div class="form-section">
-                <h3>📍 Ubicación</h3>
+                <h3><i class="fas fa-location-dot"></i> Ubicación</h3>
 
                 <div class="form-row">
                   <div class="form-group full-width">
@@ -240,7 +250,7 @@
 
               <!-- Sección 4: Datos del representante (Opcional) -->
               <div class="form-section">
-                <h3>👨‍👩‍👧 Datos del representante (Opcional)</h3>
+                <h3><i class="fas fa-users"></i> Datos del representante <span>(Opcional)</span></h3>
 
                 <div class="form-row">
                   <div class="form-group">

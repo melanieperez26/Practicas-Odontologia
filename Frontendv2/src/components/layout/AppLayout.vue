@@ -62,8 +62,8 @@ const { isCollapsed, isMobile } = useSidebar()
   flex: 1;
   display: flex;
   position: relative;
-  padding-top: 56px;
-  min-height: calc(100vh - 56px);
+  padding-top: 64px;
+  min-height: calc(100vh - 64px);
   overflow-x: hidden;
 }
 
@@ -87,7 +87,7 @@ const { isCollapsed, isMobile } = useSidebar()
 
 /* ========== WRAPPER DEL CONTENIDO ========== */
 .content-wrapper {
-  padding: 1.25rem;
+  padding: 1.5rem 1.75rem;
   min-height: 100%;
   background: var(--color-background);
   max-width: 100%;
